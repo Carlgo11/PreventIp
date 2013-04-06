@@ -1,0 +1,16 @@
+name: 'PreventIp'
+main: 'org.carlgo11.Main.Main'
+version: '1.0'
+permissions:
+    PreventIp.send:
+        description: default for ops to prevent them being harmed
+        default: op
+    PreventIp.*:
+        description: Player can do everything!
+        default: op
+    PreventIp.Command.Preventip:
+        description: Player have access to /Preventip
+        default: op
+commands:
+  preventip:
+    description: Enable/Disable PreventIp
