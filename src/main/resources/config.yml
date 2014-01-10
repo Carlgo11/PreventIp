@@ -7,31 +7,53 @@
 # Automatically download patches and bug-fixes? This means you'll never have to download any new versions from dev.bukkit.org! (Recommended: 'true')
 auto-update: true
 
+# Enter a translation you want to use. Currently available: EN, SV
+language: EN
+
 ############################################################
 # +------------------------------------------------------+ #
 # |                       Settings                       | #
 # +------------------------------------------------------+ #
 ############################################################
-# warn, kick, ban
+
+# What should the plugin do to the players that are cauth?
+# Available: warn, kick, ban
 action: warn
 
-ignore-chat: false
-
-ignore-commands: false
-
+# Should the plugin ignore ips? (Example: 123.123.123.123)
 block-ip: true
 
+# Should the plugin ignore hostnames? (Example: mc.example.net)
 block-hostname: true
 
+# Should the plugin ignore the chat?
+ignore-chat: false
+
+# Should the plugin ignore commands?
+ignore-commands: false
+
+# Enter the commands you want PreventIP to search through? Use - * for all.
 blocked-cmds:
-- msg
-- tell
+- /msg
+- /tell
+- /mail
+# - *
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       Messages                       | #
+# +------------------------------------------------------+ #
+############################################################
+
 # The message that will be broadcasted whena  player advertises another server.
 # Leave '' to disable.
 broadcast-msg: 'tried to advertise another server!'
 
+# The message that the player will recive if action is set to warn
 warn-msg: 'Nope'
 
+# The message that the player will recive if action is set to kick
 kick-msg: 'Don''t..'
 
+# The message that the player will recive if action is set to ban
 ban-msg: 'LoL xD'

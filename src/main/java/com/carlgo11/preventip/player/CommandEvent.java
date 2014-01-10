@@ -1,6 +1,7 @@
 package com.carlgo11.preventip.player;
 
 import com.carlgo11.preventip.Main;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.bukkit.entity.Player;
@@ -27,7 +28,8 @@ public class CommandEvent implements Listener {
             String[] args = msg.split(" ");
             String cmd = args[0].toString();
             Player p = e.getPlayer();
-            if (plugin.getConfig().getStringList("blocked-cmds").contains(cmd)) {
+            List<String> blockedcmds = plugin.getConfig().getStringList("blocked-cmds");
+            if (blockedcmds.contains(cmd) || blockedcmds.contains("*")) {
                 if (!p.hasPermission("preventip.ignore")) {
                     Pattern ipPattern = Pattern.compile("(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])");
                     Pattern hostnamePattern = Pattern.compile("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$");
