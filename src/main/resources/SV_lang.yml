@@ -1,2 +1,4 @@
 #Swedish translation
 prefix: '&d[PreventIP]&r'
+kick-msg: 'Du har blivit kickad: '
+ban-msg: 'Du har blivit bannad: '

@@ -1,2 +1,4 @@
 #English translation
 prefix: '&d[PreventIP]&r'
+kick-msg: 'You have been Kicked: '
+ban-msg: 'You have been Banned: '

@@ -39,18 +39,26 @@ ignore-chat: false
 # Should the plugin ignore commands?
 ignore-commands: false
 
+# Should the plugin ignore hostnames who starts with http:// & https:// ?
+ignore-http: true
+
 # Enter the commands you want PreventIP to search through? Use - * for all.
-blocked-cmds:
+available-cmds:
 - /msg
 - /tell
 - /mail
+- /t
+- /m
+- /whisper
+- /message
+- /pm
 # - *
 
 # Of course you don't want to block all hostnames/links. Enter the hostnames/links you want to ignore below.
-ignored-hostnames:
-- google.com
-- youtube.com
-- mc.portalcraft.se
+#ignored-hostnames:
+#- google.com
+#- youtube.com
+#- mc.portalcraft.se
 
 
 ############################################################
@@ -61,13 +69,13 @@ ignored-hostnames:
 
 # The message that will be broadcasted whena  player advertises another server.
 # Leave '' to disable.
-broadcast-msg: 'tried to advertise another server!'
+broadcast-msg: "tried to advertise another server!"
 
 # The message that the player will recive if action is set to warn
-warn-msg: 'Nope'
+warn-msg: "Please don't advertise other servers here."
 
 # The message that the player will recive if action is set to kick
-kick-msg: 'Don''t..'
+kick-msg: "Please don't advertise other servers here."
 
 # The message that the player will recive if action is set to ban
-ban-msg: 'LoL xD'
+ban-msg: "Please don't advertise other servers here."
