@@ -4,6 +4,7 @@ import com.carlgo11.preventip.commands.*;
 import com.carlgo11.preventip.player.*;
 import com.carlgo11.preventip.player.language.Lang;
 import com.carlgo11.preventip.player.language.loadLang;
+import com.carlgo11.preventip.updater.Updater;
 import java.io.File;
 import java.util.regex.Pattern;
 import org.bukkit.Bukkit;
@@ -22,6 +23,8 @@ public class Main extends JavaPlugin {
     public boolean blockip;
     public boolean blockhostname;
     public boolean ignorehttp;
+    public boolean autoupdater;
+    public boolean updateavailable;
 
     public Pattern ipPattern = Pattern.compile("(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])");
     public Pattern hostnamePattern = Pattern.compile("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$");
@@ -34,6 +37,7 @@ public class Main extends JavaPlugin {
         getPluginManager().registerEvents(new CommandEvent(this), this);
         getPluginManager().registerEvents(new loadLang(this), this);
         commands();
+        updater();
     }
 
     public void onDisable()
@@ -48,6 +52,13 @@ public class Main extends JavaPlugin {
     public void config()
     {
         saveDefaultConfig();
+    }
+    
+    public void updater(){
+        if(autoupdater){
+         Updater updater = new Updater(this, 49417, getFile(), Updater.UpdateType.DEFAULT, true);
+         updateavailable = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;   
+        }
     }
 
     public YamlConfiguration getLang()
@@ -64,7 +75,7 @@ public class Main extends JavaPlugin {
     {
         blockip = getConfig().getBoolean("block-ip");
         blockhostname = getConfig().getBoolean("block-hostname");
-        
+        autoupdater = getConfig().getBoolean("auto-update");
     }
 
     public void broadcastAbuse(Player p)
