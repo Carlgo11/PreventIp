@@ -20,6 +20,13 @@ language: EN
 # Available: warn, kick, ban
 action: warn
 
+# Only available when action is set to custom
+# Templates: Player {player}
+# Want more templates? Contact me on dev.bukkit.org
+custom-commands:
+- '/tempban {player} 1d'
+- '/say {player} tried to advertise another server!'
+
 # Should the plugin ignore ips? (Example: 123.123.123.123)
 block-ip: true
 

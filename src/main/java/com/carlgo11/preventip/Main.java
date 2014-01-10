@@ -22,20 +22,17 @@ public class Main extends JavaPlugin {
         getPluginManager().registerEvents(new ChatEvent(this), this);
         getPluginManager().registerEvents(new CommandEvent(this), this);
         getPluginManager().registerEvents(new loadLang(this), this);
-        
+
     }
 
     public void onDisalbe()
     {
 
     }
-    
-    public void config(){
-        File config = new File(getDataFolder(), "config.yml");
-        if (!config.exists()) {
-            saveDefaultConfig();
-            System.out.println("[" + getDescription().getName() + "] " + "No config.yml detected, config.yml created.");
-        }
+
+    public void config()
+    {
+        saveDefaultConfig();
     }
 
     public YamlConfiguration getLang()
@@ -53,36 +50,47 @@ public class Main extends JavaPlugin {
         if (!getConfig().getString("broadcast-msg").isEmpty()) {
             String prebroadcast = getConfig().getString("broadcast-msg");
             String broadcast = ChatColor.translateAlternateColorCodes('&', prebroadcast);
-            for(Player pl : Bukkit.getOnlinePlayers()){
-                if(pl != p){
-	                pl.sendMessage("" + Lang.PREFIX + ChatColor.YELLOW + "" + p.getName() + broadcast);
+            for (Player pl : Bukkit.getOnlinePlayers()) {
+                if (pl != p) {
+                    pl.sendMessage("" + Lang.PREFIX + ChatColor.YELLOW + "" + p.getName() + broadcast);
                 }
-			}
-            
+            }
+
         }
     }
+
     public void action(Player p)
     {
         String act = getConfig().getString("action");
 
         if (act.equals("warn")) {
-            p.sendMessage("" + ChatColor.LIGHT_PURPLE + Lang.PREFIXn + ChatColor.YELLOW + " " +   getConfig().getString("warn-msg"));
+            p.sendMessage("" + ChatColor.LIGHT_PURPLE + Lang.PREFIXn + ChatColor.YELLOW + " " + getConfig().getString("warn-msg"));
             broadcastAbuse(p);
-        }
 
-        if (act.equals("kick")) {
-            p.kickPlayer("" + ChatColor.GOLD + Lang.PREFIXn + ChatColor.RESET + " " +  getConfig().getString("kick-msg"));
+        } else if (act.equals("kick")) {
+            p.kickPlayer("" + ChatColor.GOLD + Lang.PREFIXn + ChatColor.RESET + " " + getConfig().getString("kick-msg"));
             broadcastAbuse(p);
-        }
 
-        if (act.equals("ban")) {
-            p.kickPlayer("" + ChatColor.GOLD + Lang.PREFIXn + ChatColor.RESET + " " +   getConfig().getString("ban-msg"));
+        } else if (act.equals("ban")) {
+            p.kickPlayer("" + ChatColor.GOLD + Lang.PREFIXn + ChatColor.RESET + " " + getConfig().getString("ban-msg"));
             p.setBanned(true);
             broadcastAbuse(p);
+
+        } else if (act.equals("custom")) {
+            int listlength = getConfig().getList("custom-commands").toArray().length;
+            Object[] list = getConfig().getList("custom-commands").toArray();
+            for (int i = 0; i < listlength; i++) {
+                String curlist = list[i].toString().replaceFirst("/", "");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), curlist);
+            }
+            p.setBanned(true);
+            broadcastAbuse(p);
+
         }
     }
-    
-    public void debug(String s){
+
+    public void debug(String s)
+    {
         getLogger().info("" + Lang.PREFIX + "[Debug] " + s);
     }
 
