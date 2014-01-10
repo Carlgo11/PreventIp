@@ -10,6 +10,8 @@ auto-update: true
 # Enter a translation you want to use. Currently available: EN, SV
 language: EN
 
+# Debug-mode is usfull when you need support by a developer. 
+debug: false
 ############################################################
 # +------------------------------------------------------+ #
 # |                       Settings                       | #
