@@ -1,11 +1,14 @@
 package com.carlgo11.preventip;
 
 import com.carlgo11.preventip.commands.*;
+import com.carlgo11.preventip.mcstats.Metrics;
 import com.carlgo11.preventip.player.*;
 import com.carlgo11.preventip.player.language.Lang;
 import com.carlgo11.preventip.player.language.loadLang;
 import com.carlgo11.preventip.updater.Updater;
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
 import java.util.regex.Pattern;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getPluginManager;
@@ -58,6 +61,16 @@ public class Main extends JavaPlugin {
         if(autoupdater){
          Updater updater = new Updater(this, 49417, getFile(), Updater.UpdateType.DEFAULT, true);
          updateavailable = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;   
+        }
+    }
+    
+    public void checkMetrics()
+    {
+        try {
+            Metrics metrics = new Metrics(this);
+            metrics.start();
+        } catch (IOException ex) {
+            this.getLogger().log(Level.WARNING, Lang.PREFIX + "Error Submitting stats!" + "Output: " + ex.toString());
         }
     }
 
