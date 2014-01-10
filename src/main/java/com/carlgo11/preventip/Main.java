@@ -20,6 +20,7 @@ public class Main extends JavaPlugin {
     {
         config();
         getPluginManager().registerEvents(new ChatEvent(this), this);
+        getPluginManager().registerEvents(new CommandEvent(this), this);
         getPluginManager().registerEvents(new loadLang(this), this);
         
     }
@@ -58,6 +59,26 @@ public class Main extends JavaPlugin {
                 }
 			}
             
+        }
+    }
+    public void action(Player p)
+    {
+        String act = getConfig().getString("action");
+
+        if (act.equals("warn")) {
+            p.sendMessage("" + ChatColor.LIGHT_PURPLE + Lang.PREFIXn + ChatColor.YELLOW + " " +   getConfig().getString("warn-msg"));
+            broadcastAbuse(p);
+        }
+
+        if (act.equals("kick")) {
+            p.kickPlayer("" + ChatColor.GOLD + Lang.PREFIXn + ChatColor.RESET + " " +  getConfig().getString("kick-msg"));
+            broadcastAbuse(p);
+        }
+
+        if (act.equals("ban")) {
+            p.kickPlayer("" + ChatColor.GOLD + Lang.PREFIXn + ChatColor.RESET + " " +   getConfig().getString("ban-msg"));
+            p.setBanned(true);
+            broadcastAbuse(p);
         }
     }
     
