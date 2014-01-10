@@ -46,6 +46,13 @@ blocked-cmds:
 - /mail
 # - *
 
+# Of course you don't want to block all hostnames/links. Enter the hostnames/links you want to ignore below.
+ignored-hostnames:
+- google.com
+- youtube.com
+- mc.portalcraft.se
+
+
 ############################################################
 # +------------------------------------------------------+ #
 # |                       Messages                       | #

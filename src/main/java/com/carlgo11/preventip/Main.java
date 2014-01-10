@@ -16,16 +16,19 @@ public class Main extends JavaPlugin {
     public static YamlConfiguration LANG;
     public static File LANG_FILE;
 
+    // config
+    public boolean blockip;
+    public boolean blockhostname;
+    public boolean ignorehttp;
     public void onEnable()
     {
         config();
         getPluginManager().registerEvents(new ChatEvent(this), this);
         getPluginManager().registerEvents(new CommandEvent(this), this);
         getPluginManager().registerEvents(new loadLang(this), this);
-
     }
 
-    public void onDisalbe()
+    public void onDisable()
     {
 
     }
@@ -43,6 +46,12 @@ public class Main extends JavaPlugin {
     public File getLangFile()
     {
         return LANG_FILE;
+    }
+
+    public void readConfig()
+    {
+        blockip = getConfig().getBoolean("block-ip");
+        blockhostname = getConfig().getBoolean("block-hostname");
     }
 
     public void broadcastAbuse(Player p)

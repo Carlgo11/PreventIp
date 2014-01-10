@@ -35,10 +35,10 @@ public class CommandEvent implements Listener {
                     Pattern hostnamePattern = Pattern.compile("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$");
                     Matcher ipre = ipPattern.matcher(msg);
                     Matcher hnre = hostnamePattern.matcher(msg);
-                    if (ipre.find() && plugin.getConfig().getBoolean("block-ip")) {
+                    if (ipre.find() && plugin.blockip) {
                         e.setCancelled(true);
                         plugin.action(p);
-                    } else if (hnre.find() && plugin.getConfig().getBoolean("block-hostname")) {
+                    } else if (hnre.find() && plugin.blockhostname) {
                         e.setCancelled(true);
                         plugin.action(p);
                     }
