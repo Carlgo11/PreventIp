@@ -1,0 +1,26 @@
+############################################################
+# +------------------------------------------------------+ #
+# |                    Plugin Settings                   | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Automatically download patches and bug-fixes? This means you'll never have to download any new versions from dev.bukkit.org! (Recommended: 'true')
+auto-update: true
+
+############################################################
+# +------------------------------------------------------+ #
+# |                       Settings                       | #
+# +------------------------------------------------------+ #
+############################################################
+# warn, kick, ban
+action: warn
+
+# The message that will be broadcasted whena  player advertises another server.
+# Leave '' to disable.
+broadcast-msg: 'tried to advertise another server!'
+
+cancel-msg: 'Nope'
+
+kick-msg: 'Don''t..'
+
+ban-msg: 'LoL xD'
