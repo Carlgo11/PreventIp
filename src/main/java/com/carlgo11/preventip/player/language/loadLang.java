@@ -20,7 +20,7 @@ public class loadLang implements Listener {
     public void loadLang() {
         File dir = new File(plugin.getDataFolder() + "/language");
         dir.mkdir();
-        if (!plugin.getConfig().getString("language").isEmpty()) {
+        if (plugin.getConfig().contains("language") && !plugin.getConfig().getString("language").isEmpty()) {
             File lang = new File(plugin.getDataFolder() + "/language", plugin.getConfig().getString("language") + "_lang.yml");
             if (!lang.exists()) {
                 try {

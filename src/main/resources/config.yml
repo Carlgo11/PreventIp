@@ -15,11 +15,14 @@ auto-update: true
 # warn, kick, ban
 action: warn
 
+block-ip: true
+
+block-hostname: true
 # The message that will be broadcasted whena  player advertises another server.
 # Leave '' to disable.
 broadcast-msg: 'tried to advertise another server!'
 
-cancel-msg: 'Nope'
+warn-msg: 'Nope'
 
 kick-msg: 'Don''t..'
 

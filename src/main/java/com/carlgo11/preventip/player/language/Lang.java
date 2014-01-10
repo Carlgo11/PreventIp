@@ -5,7 +5,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public enum Lang {
     
-    PREFIX("prefix", "§d[Prefix]§r"),
+    PREFIX("prefix", "&d[PreventIP]&r"),
+    PREFIXn("prefix", "&d[PreventIP]&r"),
     KICK_MSG("kickmsg", "You have been Kicked: "),
     BAN_MSG("banmsg", "You have been Banned: ");
     

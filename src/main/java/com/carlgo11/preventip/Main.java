@@ -1,8 +1,11 @@
 package com.carlgo11.preventip;
 
+import com.carlgo11.preventip.player.*;
 import com.carlgo11.preventip.player.language.Lang;
+import com.carlgo11.preventip.player.language.loadLang;
 import java.io.File;
 import org.bukkit.Bukkit;
+import static org.bukkit.Bukkit.getPluginManager;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -16,6 +19,9 @@ public class Main extends JavaPlugin {
     public void onEnable()
     {
         config();
+        getPluginManager().registerEvents(new ChatEvent(this), this);
+        getPluginManager().registerEvents(new loadLang(this), this);
+        
     }
 
     public void onDisalbe()
@@ -43,10 +49,15 @@ public class Main extends JavaPlugin {
 
     public void broadcastAbuse(Player p)
     {
-        if (!getConfig().getString("broadcast").equals("")) {
-            String prebroadcast = getConfig().getString("broadcast");
+        if (!getConfig().getString("broadcast-msg").isEmpty()) {
+            String prebroadcast = getConfig().getString("broadcast-msg");
             String broadcast = ChatColor.translateAlternateColorCodes('&', prebroadcast);
-            Bukkit.broadcastMessage("" + Lang.PREFIX + ChatColor.YELLOW + "" + p.getName() + broadcast);
+            for(Player pl : Bukkit.getOnlinePlayers()){
+                if(pl != p){
+	                pl.sendMessage("" + Lang.PREFIX + ChatColor.YELLOW + "" + p.getName() + broadcast);
+                }
+			}
+            
         }
     }
     
