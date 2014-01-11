@@ -1,6 +1,6 @@
 PreventIp
 =========
-[![Build Status](https://travis-ci.org/Carlgo11/preventip.png?branch=master)](https://travis-ci.org/Carlgo11/preventip)
+[![Build Status](https://travis-ci.org/Carlgo11/PreventIp.png?branch=master)](https://travis-ci.org/Carlgo11/PreventIp)
 ## What is PreventIp?
 
 PreventIp is a Bukkit mod that prevents players from sending an IPs/Hostnames both in Chat and as a private message.<br>
