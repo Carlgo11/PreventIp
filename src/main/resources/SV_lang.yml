@@ -2,3 +2,8 @@
 prefix: '&d[PreventIP]&r'
 kick-msg: 'Du har blivit kickad: '
 ban-msg: 'Du har blivit bannad: '
+badperms: '&cDu har inte behörighet för det kommandot'
+preventip: 'Visar alla kommandon'
+preventip-reload: 'Laddar om pluginet'
+preventip-support: 'Kontakta Support'
+preventip-report: 'Ladda upp en raport till pastebin'
