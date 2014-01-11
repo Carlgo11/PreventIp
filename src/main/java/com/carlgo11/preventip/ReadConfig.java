@@ -1,8 +1,5 @@
 package com.carlgo11.preventip;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import org.bukkit.event.Listener;
 
 public class ReadConfig implements Listener{

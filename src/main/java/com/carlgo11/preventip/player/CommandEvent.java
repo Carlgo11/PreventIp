@@ -3,11 +3,9 @@ package com.carlgo11.preventip.player;
 import com.carlgo11.preventip.Main;
 import java.util.List;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class CommandEvent implements Listener {

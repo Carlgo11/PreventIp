@@ -95,7 +95,7 @@ public class CommandPreventIp implements CommandExecutor {
     public void reload(CommandSender sender)
     {
         if (sender.hasPermission("preventip.preventip.reload")) {
-
+            
         } else {
             plugin.senderSendMessage(sender, "" + Lang.BADPERMS);
         }
