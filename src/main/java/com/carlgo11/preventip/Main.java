@@ -6,6 +6,7 @@ import com.carlgo11.preventip.mcstats.Metrics;
 import com.carlgo11.preventip.player.*;
 import com.carlgo11.preventip.player.language.Lang;
 import com.carlgo11.preventip.player.language.loadLang;
+import com.carlgo11.preventip.updater.Updater;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -67,8 +68,8 @@ public class Main extends JavaPlugin {
     public void updater()
     {
         if (autoupdater) {
-            //Updater updater = new Updater(this, 52405, getFile(), Updater.UpdateType.DEFAULT, true);
-            //updateavailable = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;   
+            Updater updater = new Updater(this, 52405, getFile(), Updater.UpdateType.DEFAULT, true);
+            updateavailable = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;   
 
         }
     }
