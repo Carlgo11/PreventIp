@@ -12,6 +12,7 @@ public class ReadConfig implements Listener{
         Main.blockip = Main.getConfig().getBoolean("block-ip");
         Main.blockhostname = Main.getConfig().getBoolean("block-hostname");
         Main.autoupdater = Main.getConfig().getBoolean("auto-update");
+        Main.debug = Main.getConfig().getBoolean("debug");
     }
 
 }
