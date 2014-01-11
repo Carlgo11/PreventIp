@@ -8,6 +8,10 @@ public class CustomGraphs {
     {
         graph0(metrics, main);
         graph1(metrics, main);
+        graph2(metrics, main);
+        graph3(metrics, main);
+        graph4(metrics, main);
+        graph5(metrics, main);
         metrics.start();
     }
 
@@ -48,7 +52,7 @@ public class CustomGraphs {
         } else {
             graph.addPlotter(new SimplePlotter("disabled"));
         }
-        main.debug("graph0 sent");
+        main.debug("graph2 sent");
     }
     
     static void graph3(Metrics metrics, Main main)
@@ -60,7 +64,29 @@ public class CustomGraphs {
         } else {
             graph.addPlotter(new SimplePlotter("disabled"));
         }
-        main.debug("graph0 sent");
+        main.debug("graph3 sent");
+    }
+    static void graph4(Metrics metrics, Main main)
+    {
+        Metrics.Graph graph = metrics.createGraph("ignore-http");
+        boolean au = main.getConfig().getBoolean("ignore-http");
+        if (au) {
+            graph.addPlotter(new SimplePlotter("enabled"));
+        } else {
+            graph.addPlotter(new SimplePlotter("disabled"));
+        }
+        main.debug("graph4 sent");
+    }
+    static void graph5(Metrics metrics, Main main)
+    {
+        Metrics.Graph graph = metrics.createGraph("ignore-commands");
+        boolean au = main.getConfig().getBoolean("ignore-commands");
+        if (au) {
+            graph.addPlotter(new SimplePlotter("enabled"));
+        } else {
+            graph.addPlotter(new SimplePlotter("disabled"));
+        }
+        main.debug("graph5 sent");
     }
     
 }
