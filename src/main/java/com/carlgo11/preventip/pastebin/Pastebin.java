@@ -9,13 +9,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class API{
-        static public String token = "2c4d7c16e13a47cba3269b5c0345845d";
-        static public String devkey = "887df1d2662d1c79ce2f691f2a9d3ae0";
-        static public String loginURL = "http://www.pastebin.com/api/api_login.php";
+public class Pastebin{
+        static public String token = "b558dbec597603c726d31633634f294b";
+        static public String devkey = "9e7c871d87d0e51a0ee185b4c55ab173";
         static public String pasteURL = "http://www.pastebin.com/api/api_post.php";
 
-        public API() {
+        public Pastebin() {
         }
 
         static public String checkResponse(String response) {
@@ -29,12 +28,12 @@ public class API{
                         throws UnsupportedEncodingException {
                 String content = URLEncoder.encode(code, "UTF-8");
                 String title = URLEncoder.encode(name, "UTF-8");
-                String data = "api_option=paste&api_user_key=" + API.token
+                String data = "api_option=paste&api_user_key=" + Pastebin.token
                                 + "&api_paste_private=0&api_paste_name=" + title
-                                + "&api_paste_expire_date=N&api_paste_format=" + format
-                                + "&api_dev_key=" + API.devkey + "&api_paste_code=" + content;
-                String response = API.page(API.pasteURL, data);
-                String check = API.checkResponse(response);
+                                + "&api_paste_expire_date=1M&api_paste_format=" + format
+                                + "&api_dev_key=" + Pastebin.devkey + "&api_paste_code=" + content;
+                String response = Pastebin.page(Pastebin.pasteURL, data);
+                String check = Pastebin.checkResponse(response);
                 if (!check.equals(""))
                         return check;
                 return response;

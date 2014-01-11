@@ -12,6 +12,11 @@ language: EN
 
 # Debug-mode is usfull when you need support by a developer. 
 debug: false
+
+# Want to post the log when ever you need assistance by a developer?
+# This helps us diagnose the issue much faster!
+send-log: true
+
 ############################################################
 # +------------------------------------------------------+ #
 # |                       Settings                       | #

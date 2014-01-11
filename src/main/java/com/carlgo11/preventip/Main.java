@@ -8,6 +8,7 @@ import com.carlgo11.preventip.player.language.Lang;
 import com.carlgo11.preventip.player.language.loadLang;
 import com.carlgo11.preventip.updater.Updater;
 import com.carlgo11.preventip.pastebin.*;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,14 +26,15 @@ public class Main extends JavaPlugin {
 
     public static YamlConfiguration LANG;
     public static File LANG_FILE;
-    public String report;
+    public static String report;
+    
     // config
     public boolean blockip;
     public boolean blockhostname;
     public boolean ignorehttp;
     public boolean autoupdater;
     public boolean updateavailable;
-    
+
     public Pattern ipPattern = Pattern.compile("(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])");
     public Pattern hostnamePattern = Pattern.compile("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$");
     public Pattern httpPattern = Pattern.compile("(^[(http)(https)]://)(^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$)");
@@ -40,7 +42,7 @@ public class Main extends JavaPlugin {
     public void onEnable()
     {
         config();
-        readConfig();
+        ReadConfig.readConfig(this);
         getPluginManager().registerEvents(new loadLang(this), this);
         updater();
         mcstats();
@@ -53,6 +55,7 @@ public class Main extends JavaPlugin {
     {
 
     }
+
     public void commands()
     {
         getCommand("preventip").setExecutor(new CommandPreventIp(this));
@@ -62,15 +65,16 @@ public class Main extends JavaPlugin {
     {
         saveDefaultConfig();
     }
-    
-    public void updater(){
-        if(autoupdater){
+
+    public void updater()
+    {
+        if (autoupdater) {
          //Updater updater = new Updater(this, 49417, getFile(), Updater.UpdateType.DEFAULT, true);
-         //updateavailable = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;   
-         
+            //updateavailable = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;   
+
         }
     }
-    
+
     public void mcstats()
     {
         try {
@@ -92,13 +96,7 @@ public class Main extends JavaPlugin {
         return LANG_FILE;
     }
 
-    public void readConfig()
-    {
-        blockip = getConfig().getBoolean("block-ip");
-        blockhostname = getConfig().getBoolean("block-hostname");
-        autoupdater = getConfig().getBoolean("auto-update");
-        report = "CONFIG: \n{"+getConfig().toString()+"}\n\nLatest Log:\n{"+"(log)"+"}";
-    }
+    
 
     public void broadcastAbuse(Player p)
     {
