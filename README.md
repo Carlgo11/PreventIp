@@ -21,20 +21,20 @@ To use this plugin you need:
 
 ## How do I install this?
 
-### Install the latest Preventip.jar from our ci.<br>
+#### Install the latest Preventip.jar from our ci.<br>
 
 With wget: `[sudo] wget http://ci.kamino.in/job/preventip/lastSuccessfulBuild/artifact/target/PreventIp-1.0.jar` <br>
 Without wget: download the jar here: http://ci.kamino.in/job/preventip/<br>
 
-### Place the .jar in your plugins/ directory
+#### Place the .jar in your plugins/ directory
 
-### Restart your bukkit minecraft-server
+#### Restart your bukkit minecraft-server
 
 ## Development
 
 Pull Requests are always welcome!
 
-### When developing PreventIp remember to:
+#### When developing PreventIp remember to:
 
 * Use the latest branch `master`
 
