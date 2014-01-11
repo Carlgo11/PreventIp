@@ -64,9 +64,9 @@ public class CommandPreventIp implements CommandExecutor {
             try {
                 String pastebin = Pastebin.makePaste(Report.Main(plugin), "PreventIp help-log", "text");
                 String purelink = pastebin.toString().replace("http://pastebin.com/", "");
-                sender.sendMessage("" + Lang.PREFIX + ChatColor.GREEN + "Thank you for choosing our support IRC! If the helpers aren't responding please post a question on our bukkit page.");
+                sender.sendMessage("" + Lang.PREFIX + ChatColor.GREEN + "Thank you for choosing our support IRC!\nIf the helpers busy please post a question on bukkit.");
                 sender.sendMessage(ChatColor.YELLOW + "Connect with this link: " + ChatColor.BLUE + "http://cajs.co.uk/link/preip-irc?&nick=preip_" + purelink);
-                sender.sendMessage(ChatColor.YELLOW + "here's your log: " + ChatColor.BLUE + pastebin + ChatColor.YELLOW + ". Please give the developers this when you connect.");
+                sender.sendMessage(ChatColor.YELLOW + "Here's your log: " + ChatColor.BLUE + pastebin + ChatColor.YELLOW + ".\nPlease give the developers the log.");
             } catch (UnsupportedEncodingException ex) {
                 sender.sendMessage("Error: " + ex.toString());
                 plugin.debug(ex.toString());
