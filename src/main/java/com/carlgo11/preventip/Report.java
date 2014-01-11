@@ -19,10 +19,10 @@ public class Report {
         BufferedReader br = null;
         StringBuilder txt = new StringBuilder();
         try {
-            String sCurrentLine;
+            String line;
             br = new BufferedReader(new FileReader("" + Main.getDataFolder() + File.separatorChar + "config.yml"));
-            while ((sCurrentLine = br.readLine()) != null) {
-                txt.append(sCurrentLine);
+            while ((line = br.readLine()) != null) {
+                txt.append(line);
                 txt.append("\n");
             }
         } catch (IOException e) {
@@ -46,10 +46,10 @@ public class Report {
         StringBuilder txt = new StringBuilder();
         if (Main.getConfig().getBoolean("send-log")) {
             try {
-                String sCurrentLine;
+                String line;
                 br = new BufferedReader(new FileReader("logs" + File.separatorChar + "latest.log"));
-                while ((sCurrentLine = br.readLine()) != null) {
-                    txt.append(sCurrentLine);
+                while ((line = br.readLine()) != null) {
+                    txt.append(line);
                     txt.append("\n");
                 }
             } catch (IOException e) {
