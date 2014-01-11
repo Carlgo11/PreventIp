@@ -48,7 +48,7 @@ public class CommandEvent implements Listener {
                     }
                     if (match) {
                         e.setCancelled(true);
-                        plugin.action(p);
+                        Action.action(p, plugin);
                     }
                 }
             }
