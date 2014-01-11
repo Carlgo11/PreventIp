@@ -43,7 +43,7 @@ public class CommandPreventIp implements CommandExecutor {
         return true;
     }
 
-    public void help(Command cmd, CommandSender sender)
+    private void help(Command cmd, CommandSender sender)
     {
         String header = ChatColor.GREEN + "======== " + ChatColor.YELLOW + "[" + plugin.getDescription().getName() + "]" + ChatColor.GREEN + " ======== ";
         if (sender.hasPermission("preventip.preventip")) {
@@ -58,7 +58,7 @@ public class CommandPreventIp implements CommandExecutor {
         }
     }
 
-    public void support(CommandSender sender)
+    private void support(CommandSender sender)
     {
         if (sender.hasPermission("preventip.preventip.support")) {
             try {
@@ -68,16 +68,15 @@ public class CommandPreventIp implements CommandExecutor {
                 sender.sendMessage(ChatColor.YELLOW + "Connect with this link: " + ChatColor.BLUE + "http://cajs.co.uk/link/preip-irc?&nick=preip_" + purelink);
                 sender.sendMessage(ChatColor.YELLOW + "Here's your log: " + ChatColor.BLUE + pastebin + ChatColor.YELLOW + ".\nPlease give the developers the log.");
             } catch (UnsupportedEncodingException ex) {
-                sender.sendMessage("Error: " + ex.toString());
+                plugin.senderSendMessage(sender, "Error: " + ex.toString());
                 plugin.debug(ex.toString());
-                //error
             }
         } else {
             plugin.senderSendMessage(sender, "" + Lang.BADPERMS);
         }
     }
 
-    public void report(CommandSender sender)
+    private void report(CommandSender sender)
     {
         if (sender.hasPermission("preventip.preventip.report")) {
             try {
@@ -92,7 +91,7 @@ public class CommandPreventIp implements CommandExecutor {
         }
     }
 
-    public void reload(CommandSender sender)
+    private void reload(CommandSender sender)
     {
         if (sender.hasPermission("preventip.preventip.reload")) {
             
