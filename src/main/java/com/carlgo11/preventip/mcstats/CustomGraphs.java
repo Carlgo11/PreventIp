@@ -39,4 +39,16 @@ public class CustomGraphs {
         }
         main.debug("graph1 sent");
     }
+    static void graph2(Metrics metrics, Main main)
+    {
+        Metrics.Graph graph = metrics.createGraph("block-ip");
+        boolean au = main.getConfig().getBoolean("block-ip");
+        if (au) {
+            graph.addPlotter(new SimplePlotter("enabled"));
+        } else {
+            graph.addPlotter(new SimplePlotter("disabled"));
+        }
+        main.debug("graph0 sent");
+    }
+    
 }
