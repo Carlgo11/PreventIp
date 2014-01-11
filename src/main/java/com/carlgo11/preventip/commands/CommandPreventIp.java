@@ -29,8 +29,8 @@ public class CommandPreventIp implements CommandExecutor {
             if(args[0].equalsIgnoreCase("support")){
                 if(sender.hasPermission("preventip.support")){
                     try{
-                        Report.Main(plugin);
-                        String pastebin = Pastebin.makePaste(plugin.report, "PreventIp help-log", "text");
+
+                        String pastebin = Pastebin.makePaste(Report.Main(plugin), "PreventIp help-log", "text");
                         String purelink = pastebin.toString().replace("http://pastebin.com/", "");
                         sender.sendMessage("" + Lang.PREFIX + ChatColor.GREEN + "Thank you for choosing our support IRC! If the helpers aren't responding please post a question on our bukkit page.");
                         sender.sendMessage(ChatColor.YELLOW + "Connect with this link: " + ChatColor.BLUE + "http://cajs.co.uk/link/preip-irc?&nick=preip_"+purelink);
@@ -45,8 +45,7 @@ public class CommandPreventIp implements CommandExecutor {
                 }
             }else if(args[0].equalsIgnoreCase("report")){
                 try{
-                    Report.Main(plugin);
-                    String pastebin = Pastebin.makePaste(plugin.report, "PreventIp help-log", "text");
+                    String pastebin = Pastebin.makePaste(Report.Main(plugin), "PreventIp help-log", "text");
                     sender.sendMessage("" + Lang.PREFIX + ChatColor.GREEN + "Here's your log: "+pastebin);
                 }catch(UnsupportedEncodingException ex){
                         sender.sendMessage("Error: "+ex.toString());
