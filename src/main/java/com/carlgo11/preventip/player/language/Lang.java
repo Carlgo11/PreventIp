@@ -7,7 +7,12 @@ public enum Lang {
     
     PREFIX("prefix", "&d[PreventIP]&r"),
     KICK_MSG("kickmsg", "You have been Kicked: "),
-    BAN_MSG("banmsg", "You have been Banned: ");
+    BAN_MSG("banmsg", "You have been Banned: "),
+    BADPERMS("badperms", "&cYou don't have permission to execute that command."),
+    preventip_Main("preventip", "Shows all available commands."),
+    preventip_reload("preventip_reload", "Reloads the plugin."),
+    preventip_support("preventip_support", "Contact support."),
+    preventip_report("preventip_report", "Upload a report to pastebin.");
     
     private String path;
     private String def;
