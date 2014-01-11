@@ -24,12 +24,18 @@ public class CustomGraphs {
     }
     
     static void graph1(Metrics metrics, Main main){
-        Metrics.Graph graph = metrics.createGraph("auto-update");
-        boolean au = main.getConfig().getBoolean("auto-update");
-        if (au) {
-            graph.addPlotter(new SimplePlotter("enabled"));
-        } else {
-            graph.addPlotter(new SimplePlotter("disabled"));
+        Metrics.Graph graph = metrics.createGraph("action");
+        String ac = main.getConfig().getString("action");
+        if (ac.equalsIgnoreCase("warn")) {
+            graph.addPlotter(new SimplePlotter("Warn"));
+        } else if(ac.equalsIgnoreCase("kick")){
+            graph.addPlotter(new SimplePlotter("Kick"));
+        }else if(ac.equalsIgnoreCase("ban")){
+            graph.addPlotter(new SimplePlotter("Ban"));
+        }else if(ac.equalsIgnoreCase("custom")){
+            graph.addPlotter(new SimplePlotter("Custom"));
+        }else{
+            graph.addPlotter(new SimplePlotter("Other"));
         }
         main.debug("graph1 sent");
     }
