@@ -51,4 +51,16 @@ public class CustomGraphs {
         main.debug("graph0 sent");
     }
     
+    static void graph3(Metrics metrics, Main main)
+    {
+        Metrics.Graph graph = metrics.createGraph("block-hostname");
+        boolean au = main.getConfig().getBoolean("block-ip");
+        if (au) {
+            graph.addPlotter(new SimplePlotter("enabled"));
+        } else {
+            graph.addPlotter(new SimplePlotter("disabled"));
+        }
+        main.debug("graph0 sent");
+    }
+    
 }
