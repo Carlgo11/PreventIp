@@ -64,7 +64,7 @@ public class Report {
                 }
             }
         } else {
-            txt.append("Access denied for latest.log. Contact the Server Owner");
+            txt.append("Access denied for latest.log. Contact the Server Owner\n");
         }
         return txt;
     }
