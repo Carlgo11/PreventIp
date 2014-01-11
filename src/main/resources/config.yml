@@ -14,7 +14,7 @@ language: EN
 debug: false
 
 # Want to post the log when ever you need assistance by a developer?
-# This helps us diagnose the issue much faster!
+# This helps us diagnose the issue much faster! (Recommended 'true')
 send-log: true
 
 ############################################################
@@ -28,7 +28,7 @@ send-log: true
 action: warn
 
 # Only available when action is set to custom
-# Templates: Player {player}
+# Available templates: Player {player}
 # Want more templates? Contact me on dev.bukkit.org
 custom-commands:
 - '/tempban {player} 1d'
@@ -46,7 +46,7 @@ ignore-chat: false
 # Should the plugin ignore commands?
 ignore-commands: false
 
-# Should the plugin ignore hostnames who starts with http:// & https:// ?
+# Should the plugin ignore hostnames who starts with http:// & https:// ? (Recommended 'true')
 ignore-http: true
 
 # Enter the commands you want PreventIP to search through? Use - * for all.
