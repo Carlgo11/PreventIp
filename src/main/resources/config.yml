@@ -24,7 +24,7 @@ send-log: true
 ############################################################
 
 # What should the plugin do to the players that are cauth?
-# Available: warn, kick, ban
+# Available: warn, kick, ban, custom
 action: warn
 
 # Only available when action is set to custom
