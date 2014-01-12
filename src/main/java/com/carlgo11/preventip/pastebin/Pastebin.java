@@ -21,7 +21,7 @@ public class Pastebin {
 
     static public String checkResponse(String response)
     {
-        if (response.substring(0, 15) == "Bad API request") {
+        if (response.substring(0, 15).equals("Bad API request")) {
             return response.substring(17);
         }
         return "";
@@ -83,7 +83,6 @@ public class Pastebin {
             return response.toString();
 
         } catch (Exception e) {
-
             e.printStackTrace();
             return null;
 

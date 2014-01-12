@@ -30,13 +30,13 @@ public class ChatEvent implements Listener {
                     Matcher ipre = plugin.ipPattern.matcher(args[i].toString());
                     Matcher hnre = plugin.hostnamePattern.matcher(args[i].toString());
                     Matcher hpre = plugin.httpPattern.matcher(args[i].toString());
-                    if (hnre.find() && !plugin.blockhostname) {
+                    if (hnre.find() && plugin.blockhostname) {
                         if (!hpre.find() || plugin.ignorehttp) {
                             match = true;
                             break;
                         }
                     }
-                    if (ipre.find() && !plugin.blockip) {
+                    if (ipre.find() && plugin.blockip) {
                         match = true;
                     }
                 }
