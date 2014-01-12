@@ -7,7 +7,7 @@
 # Automatically download patches and bug-fixes? This means you'll never have to download any new versions from dev.bukkit.org! (Recommended: 'true')
 auto-update: true
 
-# Enter a translation you want to use. Currently available: EN, SV
+# Enter a translation you want to use. Currently available: EN, SV (EN = English || SV = Swedish)
 language: EN
 
 # Debug-mode is useful when you need support by a developer. 
@@ -27,7 +27,7 @@ send-log: true
 # Available: warn, kick, ban, custom
 action: warn
 
-# Only available when action is set to custom
+# This is only available when action is set to custom
 # Available templates: Player {player}
 # Want more templates? Contact me on dev.bukkit.org
 custom-commands:
@@ -61,7 +61,7 @@ available-cmds:
 - /pm
 # - *
 
-# Of course you don't want to block all hostnames/links. Enter the hostnames/links you want to ignore below.
+# Do you want to allow certain hostnames/links? Enter the hostnames/links you want to ignore below.
 #ignored-hostnames:
 #- google.com
 #- youtube.com
