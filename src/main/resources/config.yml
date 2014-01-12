@@ -10,7 +10,7 @@ auto-update: true
 # Enter a translation you want to use. Currently available: EN, SV
 language: EN
 
-# Debug-mode is usfull when you need support by a developer. 
+# Debug-mode is useful when you need support by a developer. 
 debug: false
 
 # Want to post the log when ever you need assistance by a developer?
@@ -23,7 +23,7 @@ send-log: true
 # +------------------------------------------------------+ #
 ############################################################
 
-# What should the plugin do to the players that are cauth?
+# What should the plugin do to the players that are caught?
 # Available: warn, kick, ban, custom
 action: warn
 
@@ -74,15 +74,15 @@ available-cmds:
 # +------------------------------------------------------+ #
 ############################################################
 
-# The message that will be broadcasted whena  player advertises another server.
+# The message that will be broadcasted when a player advertises another server.
 # Leave '' to disable.
 broadcast-msg: "tried to advertise another server!"
 
-# The message that the player will recive if action is set to warn
+# The message that the player will receive if action is set to warn
 warn-msg: "Please don't advertise other servers here."
 
-# The message that the player will recive if action is set to kick
+# The message that the player will receive if action is set to kick
 kick-msg: "Please don't advertise other servers here."
 
-# The message that the player will recive if action is set to ban
+# The message that the player will receive if action is set to ban
 ban-msg: "Please don't advertise other servers here."
