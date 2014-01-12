@@ -2,7 +2,7 @@
 prefix: '&d[PreventIP]&r'
 kick-msg: 'You have been Kicked: '
 ban-msg: 'You have been Banned: '
-badperms: '&cYou don''t have permission to execute that command.'
+badperms: '&cYou don't have permission to execute that command.'
 preventip: 'Shows all available commands.'
 preventip-reload: 'Reloads the plugin.'
 preventip-support: 'Contact support.'
