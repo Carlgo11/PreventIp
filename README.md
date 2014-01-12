@@ -39,3 +39,10 @@ Pull Requests are always welcome!
 * Use the latest branch `master`
 
 * Follow the bukkit project submission guidelines http://wiki.bukkit.org/BukkitDev:Project_Submission_Guidelines
+
+#### Credits
+
+* Carlgo11 - Creator / Manager / Author
+* Cajs - Contributor 
+
+More information is located here: http://dev.bukkit.org/bukkit-plugins/preventip/#w-thanks-to
