@@ -2,7 +2,7 @@
    # Plugin created by Carlgo11
    # http://YouTube.com/Carlgo11/
    #
-   # Avavible acctions: Block/Kick/Ban
+   # Available actions: Block/Kick/Ban
    action: kick
    broadcast: true
    kick-message: Please don't send ips in chat!
