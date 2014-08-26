@@ -1,0 +1,9 @@
+#German translation
+prefix: '&d[PreventIP]&r'
+kick-msg: 'Du wurdest gekickt: '
+ban-msg: 'Du wurdest gebannt: '
+badperms: '&cDu hast nicht genügend Rechte um diesen Befehl ausführen zu können!'
+preventip: 'Zeigt alle verfügbaren Befehle.'
+preventip-reload: 'Läd das Plugin neu.'
+preventip-support: 'Kontaktiere den Support.'
+preventip-report: 'Lädt einen Report auf Pastebin hoch .'
